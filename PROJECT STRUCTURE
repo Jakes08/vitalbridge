@@ -1,94 +1,100 @@
 vitalbridge/
-├── .env                      # Backend environment variables (not committed)
-├── .env.local                # Frontend environment variables (not committed)
-├── .gitignore                # Ignore .env files, build directory, etc.
-├── Dockerfile                # Docker config for Django backend
-├── README.md                 # Documentation & monetization strategy
-├── requirements.txt          # Python dependencies
-├── firebase.json             # Firebase Hosting configuration (frontend)
+├── .env                      # Backend environment variables (do not commit!)
+├── .env.local                # Frontend environment variables (do not commit!)
+├── .gitignore                # Files/folders to ignore
+├── Dockerfile                # Dockerfile for Django backend deployment
+├── README.md                 # Project documentation and monetization strategy
+├── requirements.txt          # Python dependencies for Django backend
+├── firebase.json             # Firebase Hosting configuration for React frontend
 ├── .firebaserc               # Firebase project configuration
 ├── .github/
-│   └── workflows/
-│       └── deploy.yml        # CI/CD workflow for frontend deployment
+│   └── workflows/
+│       └── deploy.yml        # GitHub Actions workflow for CI/CD
 ├── telemedicine/             # Django project folder
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── accounts/                 # Django app: user management & auth
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── urls.py
-│   ├── views.py
-│   └── templates/
-│       └── accounts/
-│           ├── base.html
-│           ├── login.html
-│           ├── register.html
-│           ├── profile.html
-│           ├── dashboard_doctor.html
-│           └── dashboard_patient.html
-├── consultations/            # Django app: appointments, video consult, EHR, feedback
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── urls.py
-│   ├── views.py
-│   └── templates/
-│       └── consultations/
-│           ├── appointment.html
-│           ├── consultation.html
-│           ├── ehr_lookup.html
-│           └── feedback.html
-├── payments/                 # Django app: payment integration (MPesa, credit card, PayPal)
-│   ├── __init__.py
-│   ├── apps.py
-│   ├── urls.py
-│   ├── views.py
-│   └── templates/
-│       └── payments/
-│           └── payment.html
-├── messaging/                # Django app: secure messaging (Channels stub)
-│   ├── __init__.py
-│   ├── apps.py
-│   ├── urls.py
-│   ├── views.py
-│   └── templates/
-│       └── messaging/
-│           └── messaging.html
-├── extras/                   # Django app: extras (chatbot, analytics)
-│   ├── __init__.py
-│   ├── apps.py
-│   ├── urls.py
-│   ├── views.py
-│   └── templates/
-│       └── extras/
-│           ├── chatbot.html
-│           └── analytics_dashboard.html
-├── legal/                    # Django app: consent management
-│   ├── __init__.py
-│   ├── apps.py
-│   ├── urls.py
-│   ├── views.py
-│   └── templates/
-│       └── legal/
-│           └── consent_form.html
-├── listings/                 # Django app: directory of doctors & hospitals
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── urls.py
-│   ├── views.py
-│   └── templates/
-│       └── listings/
-│           ├── index.html
-│           └── details.html
-├── static/                   # Static assets (CSS, images, fonts)\n│   └── css/\n│       └── style.css
-└── locale/                   # Translation files\n    ├── en/\n    │   └── translation.json\n    └── sw/\n        └── translation.json
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── accounts/                 # Django app for User management and authentication
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── accounts/
+│           ├── base.html
+│           ├── login.html
+│           ├── register.html
+│           ├── profile.html
+│           ├── dashboard_doctor.html
+│           └── dashboard_patient.html
+├── consultations/            # Django app: Appointments, Video Consultation, EHR, Feedback
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── consultations/
+│           ├── appointment.html
+│           ├── consultation.html
+│           ├── ehr_lookup.html
+│           └── feedback.html
+├── payments/                 # Django app: Payment Integration (MPesa, Credit Card, PayPal)
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── payments/
+│           └── payment.html
+├── messaging/                # Django app: Real-Time Messaging (Channels stub)
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── messaging/
+│           └── messaging.html
+├── extras/                   # Django app: Extras (Chatbot, Analytics Dashboard)
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── extras/
+│           ├── chatbot.html
+│           └── analytics_dashboard.html
+├── legal/                    # Django app: Consent Management
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── legal/
+│           └── consent_form.html
+├── listings/                 # Django app: Directory of Doctors & Hospitals
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── listings/
+│           ├── index.html
+│           └── details.html
+├── static/                   # Static Assets (CSS, images, fonts)
+│   └── css/
+│       └── style.css
+└── locale/                   # Translation Files (for i18n)
+    ├── en/
+    │   └── translation.json
+    └── sw/
+        └── translation.json
