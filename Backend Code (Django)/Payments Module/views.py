@@ -25,8 +25,8 @@ def payment(request):
                 logger.error("Stripe card error: %s", e)
                 messages.error(request, "Credit card was declined.")
             except Exception as e:
-                logger.error("Stripe error: %s", e)
-                messages.error(request, "Credit card payment processing error.")
+                logger.error("Stripe error: %s", str(e))
+                messages.error(request, f"Payment processing error: {str(e)}")
         elif method == 'mpesa':
             # Stub for MPesa integration (implement Safaricom API in production)
             messages.success(request, "MPesa payment processed successfully (stub)!")
