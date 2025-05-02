@@ -41,3 +41,18 @@ EHR_API_URL=<https://api.exampleehr.com/patientrecords>
 EMAIL_USER=<your_email@example.com>
 EMAIL_PASSWORD=your_email_password
 SENTRY_DSN=your_sentry_dsn
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+Run migrations:
+
+bash
+Copy code
+python manage.py makemigrations
+python manage.py migrate
+Run the development server:
+
+bash
+Copy code
+python manage.py runserver
