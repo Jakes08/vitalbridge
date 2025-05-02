@@ -26,5 +26,18 @@ VitalBridge is a comprehensive telemedicine platform that connects doctors and p
 ## Setup
 
 ### Backend (Django)
+
 1. Create a `.env` file in the root directory with the following variables:
 
+DJANGO_SECRET_KEY=your-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+TWILIO_ACCOUNT_SID=your_twilio_account_sid
+TWILIO_API_KEY=your_twilio_api_key
+TWILIO_API_SECRET=your_twilio_api_secret
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_PUBLISHABLE_KEY=your_stripe_public_key
+EHR_API_URL=<https://api.exampleehr.com/patientrecords>
+EMAIL_USER=<your_email@example.com>
+EMAIL_PASSWORD=your_email_password
+SENTRY_DSN=your_sentry_dsn

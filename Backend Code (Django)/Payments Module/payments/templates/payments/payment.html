@@ -1,0 +1,42 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% trans "Make a Payment" %} - VitalBridge</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="bg-gray-100">
+<div class="max-w-2xl mx-auto p-8">
+  <h2 class="text-2xl font-bold mb-4 text-center">{% trans "Choose Payment Method" %}</h2>
+  <form action="" method="POST" id="payment-form">
+    {% csrf_token %}
+    <div class="mb-4">
+      <label class="block mb-2">{% trans "Select Method:" %}</label>
+      <select name="payment_method" class="w-full p-2 border rounded">
+        <option value="credit_card">Credit/Debit Card</option>
+        <option value="mpesa">MPesa</option>
+        <option value="paypal">PayPal</option>
+      </select>
+    </div>
+    <!-- Credit Card Payment Section (Stripe) -->    
+    <div id="stripe-section" class="mb-4">
+      <label class="block mb-2">{% trans "Card Details:" %}</label>
+      <div id="card-element" class="p-2 border rounded"></div>
+    </div>
+    <button type="submit" class="w-full p-2 bg-blue-600 text-white rounded">{% trans "Pay Now" %}</button>
+  </form>
+  <script>
+    const paymentMethodSelect = document.querySelector('select[name="payment_method"]');
+    const stripeSection = document.getElementById('stripe-section');
+    paymentMethodSelect.addEventListener('change', (e) => {
+      stripeSection.style.display = e.target.value === 'credit_card' ? 'block' : 'none';
+    });
+    const stripe = Stripe('{{ stripe_publishable_key }}');
+    const elements = stripe.elements();
+    const card = elements.create('card', { hidePostalCode: true });
+    card.mount('#card-element');
+  </script>
+</div>
+</body>
+</html>

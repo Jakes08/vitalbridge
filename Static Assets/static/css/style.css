@@ -1,0 +1,29 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+footer {
+    font-size: 0.9rem;
+    background-color: #eee;
+    padding: 1em 0;
+}
+
+h2,
+h3 {
+    color: #2c3e50;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+    .p-8 {
+        padding: 1rem;
+    }
+}
